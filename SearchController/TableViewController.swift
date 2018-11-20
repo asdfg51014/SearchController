@@ -18,11 +18,12 @@ class TableViewController: UITableViewController, UISearchResultsUpdating {
     
     func settingSearchController(){
         mySearchController = UISearchController(searchResultsController: nil)
-        navigationItem.searchController = mySearchController
+        tableView.tableHeaderView = mySearchController?.searchBar
         mySearchController?.searchResultsUpdater = self
         mySearchController?.searchBar.placeholder = "Search Words"
-        mySearchController?.searchBar.barTintColor = .red
-        mySearchController?.searchBar.tintColor = .blue
+        mySearchController?.searchBar.barTintColor = .blue
+        mySearchController?.searchBar.tintColor = .red
+        mySearchController?.searchBar.searchBarStyle = .prominent
     }
     
     override func viewDidLoad() {
